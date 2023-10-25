@@ -166,12 +166,13 @@ class FavouritesPage extends StatelessWidget {
         child: Text('No favourites yet.'),
       );
     }
-
     return ListView(
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
-          child: Text('You have ${appState.favourites.length} favourites:'),
+          child: Text(appState.favourites.length == 1
+              ? 'You have one favourite:'
+              : 'You have ${appState.favourites.length} favourites:'),
         ),
         for (var pair in appState.favourites)
           ListTile(
