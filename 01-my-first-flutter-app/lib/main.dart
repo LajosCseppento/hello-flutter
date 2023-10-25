@@ -102,7 +102,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: Container(
                 color: Theme.of(context).colorScheme.primaryContainer,
-                child: page,
+                child: new AnimatedSwitcher(
+                  duration: Duration(milliseconds: 200),
+                  child: page,
+                ),
               ),
             ),
           ],
@@ -200,11 +203,14 @@ class BigCard extends StatelessWidget {
       elevation: 10,
       child: Padding(
         padding: const EdgeInsets.all(20),
-        child: Text(
-          key: const Key('wordPairDisplay'),
-          pair.asLowerCase,
-          style: style,
-          semanticsLabel: "${pair.first} ${pair.second}",
+        child: AnimatedSize(
+          duration: const Duration(milliseconds: 200),
+          child: Text(
+            key: const Key('wordPairDisplay'),
+            pair.asLowerCase,
+            style: style,
+            semanticsLabel: "${pair.first} ${pair.second}",
+          ),
         ),
       ),
     );
