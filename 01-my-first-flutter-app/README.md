@@ -1,4 +1,4 @@
-# my_first_flutter_app
+# 01-my-first-flutter-app
 
 Based on [this](https://codelabs.developers.google.com/codelabs/flutter-codelab-first) guide.
 
